@@ -1,8 +1,3 @@
-.. Documentation on using the Exactly test tool master file, created by
-   sphinx-quickstart on Sun Aug 29 13:29:22 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Documentation on using the Exactly test tool
 ===============================================================================
 
@@ -23,7 +18,7 @@ Table of Contents
 .. toctree::
    :titlesonly:
 
-   LICENSE
+   tutorial
 
 
 Copying
@@ -33,8 +28,7 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
 with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-A copy of the license is included in the section entitled "GNU
-Free Documentation License".
+A copy of the license is included in :doc:`LICENSE`.
 
 
 Indices and tables
