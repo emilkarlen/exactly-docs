@@ -1,0 +1,11 @@
+[setup]
+
+stdin = 'the contents of stdin'
+
+[act]
+
+% cat
+
+[assert]
+
+stdout equals 'the contents of stdin'

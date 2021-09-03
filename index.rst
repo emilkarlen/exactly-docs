@@ -1,3 +1,4 @@
+===============================================================================
 Documentation on using the Exactly test tool
 ===============================================================================
 
@@ -18,7 +19,8 @@ Table of Contents
 .. toctree::
    :titlesonly:
 
-   tutorial
+   tutorial/index
+   examples/index
 
 
 Copying
@@ -31,8 +33,9 @@ with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
 A copy of the license is included in :doc:`LICENSE`.
 
 
-Indices and tables
-===============================================================================
+.. ===============================================================================
+.. Indices and tables
+.. ===============================================================================
 
-* :ref:`genindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`search`
