@@ -1,0 +1,7 @@
+[setup]
+
+stdin = 'the contents of stdin'
+
+[assert]
+
+stdout equals 'the contents of stdin'

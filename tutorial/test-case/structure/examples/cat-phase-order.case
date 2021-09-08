@@ -1,0 +1,17 @@
+[assert]
+
+stdout equals 'the contents of stdin'
+
+[act]
+
+% cat
+
+[setup]
+
+stdin = 'the contents of stdin'
+
+[assert]
+
+exit-code == 0
+
+stderr is-empty

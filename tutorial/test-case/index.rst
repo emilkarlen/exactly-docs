@@ -1,9 +1,11 @@
 ===============================================================================
-Tutorial (work in progress)
+Test Cases
 ===============================================================================
 
 
 .. toctree::
    :titlesonly:
 
-   test-case/index
+   rep-exe/index
+   structure/index
+

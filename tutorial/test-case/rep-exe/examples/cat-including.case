@@ -1,0 +1,11 @@
+[setup]
+
+including my-setup.xly
+
+[act]
+
+% cat
+
+[assert]
+
+stdout equals 'the contents of stdin'
