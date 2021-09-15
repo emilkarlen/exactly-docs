@@ -4,6 +4,6 @@ Tutorial (work in progress)
 
 
 .. toctree::
-   :titlesonly:
+   :maxdepth: 3
 
    test-case/index

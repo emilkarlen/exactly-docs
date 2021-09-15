@@ -1,14 +1,9 @@
 ===============================================================================
-Test Cases
+Working with files (create, compare)
 ===============================================================================
 
 
-.. toctree::
-   :titlesonly:
-
-   rep-exe/index
-   structure/index
-
-   text
-   files
-   programs
+- `file-matcher`
+- `files-condition`
+- `files-matcher`
+- `files-source`

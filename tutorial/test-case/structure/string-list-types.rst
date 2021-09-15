@@ -1,14 +1,3 @@
 ===============================================================================
-Test Cases
+The `string` and `list` types
 ===============================================================================
-
-
-.. toctree::
-   :titlesonly:
-
-   rep-exe/index
-   structure/index
-
-   text
-   files
-   programs

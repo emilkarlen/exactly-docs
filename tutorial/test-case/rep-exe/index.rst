@@ -2,6 +2,11 @@
 Representation and execution
 ===============================================================================
 
+.. contents:: :local:
+
+Test Case files
+===============================================================================
+
 A test case is represented by a text file.
 A single file represents a single test case.
 

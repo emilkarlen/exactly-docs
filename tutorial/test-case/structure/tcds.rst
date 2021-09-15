@@ -1,14 +1,9 @@
 ===============================================================================
-Test Cases
+File Spaces, and the `path` type (for permanent and temporary files)
 ===============================================================================
 
-
-.. toctree::
-   :titlesonly:
-
-   rep-exe/index
-   structure/index
-
-   text
-   files
-   programs
+- TCDS
+- HDS
+- SDS
+- relativity
+- `path` type

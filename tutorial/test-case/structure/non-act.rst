@@ -1,14 +1,6 @@
 ===============================================================================
-Test Cases
+Arranging and asserting (non act phase structure)
 ===============================================================================
 
-
-.. toctree::
-   :titlesonly:
-
-   rep-exe/index
-   structure/index
-
-   text
-   files
-   programs
+- setup, before-assert, assert, cleanup
+- instructions

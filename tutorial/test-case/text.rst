@@ -1,14 +1,3 @@
 ===============================================================================
-Test Cases
+Working with text (gen, trans, cmp) - `source`, `matcher`, `transformer`
 ===============================================================================
-
-
-.. toctree::
-   :titlesonly:
-
-   rep-exe/index
-   structure/index
-
-   text
-   files
-   programs

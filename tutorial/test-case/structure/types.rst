@@ -1,14 +1,11 @@
 ===============================================================================
-Test Cases
+Type system (type, symbol, def, ref)
 ===============================================================================
 
-
-.. toctree::
-   :titlesonly:
-
-   rep-exe/index
-   structure/index
-
-   text
-   files
-   programs
+- def
+- ref
+- types
+- help? type syntax
+- constant
+  - cannot be mutated
+  - cannot be initialized (ftm) from dynamic data
