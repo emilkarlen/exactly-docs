@@ -1,17 +1,21 @@
 ===============================================================================
-Working with text
+Kvar
 ===============================================================================
 
 
-Generating text (`text-source`)
+Test case status
 ===============================================================================
 
+- ``[conf]/status``
+- exit codes, exit identifiers
 
-Transforming text (`text-transformer`, `line-matcher`)
+
+`integer-matcher`
 ===============================================================================
 
-- ``GLOB-PATTERN``
-- ``REGEX``
-
-Matching text (`text-matcher`, `line-matcher`)
+Syntax element that do not correspond to a type
 ===============================================================================
+
+T ex
+
+- ``RICH-STRING``

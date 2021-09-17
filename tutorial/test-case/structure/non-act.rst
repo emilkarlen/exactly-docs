@@ -2,5 +2,22 @@
 Arranging and asserting (non act phase structure)
 ===============================================================================
 
-- setup, before-assert, assert, cleanup
-- instructions
+setup, before-assert, assert, cleanup
+===============================================================================
+
+Instructions
+===============================================================================
+
+Instruction descriptions
+-------------------------------------------------------------------------------
+
+Syntax
+-------------------------------------------------------------------------------
+
+- arguments
+- similair to shell, with options preceded by ``-``
+- line oriented
+- mandatory arguments on following line
+  
+Comments
+===============================================================================

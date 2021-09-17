@@ -29,6 +29,7 @@ on stdout.
 
 If a test case passes, the exit code is 0. Otherwise it is non zero.
 
+
 Reporting the output of the checked action
 ===============================================================================
 
@@ -43,8 +44,12 @@ action - exit code, stdout and stderr:
 Assertions are ignored.
 
 
-Explicit inclusion of test case contents
+File inclusion
 ===============================================================================
+
+
+Explicit
+-------------------------------------------------------------------------------
 
 ``including`` may be used to include parts of a test case from a file.
 Here, the file |my_setup_file| is included under ``[setup]``
@@ -59,8 +64,9 @@ The path |my_setup_file| is relative the location of the test case file.
 .. |my_setup_file| replace:: `my-setup.xly`
 
 
-Implicit inclusion of test case contents
-===============================================================================
+
+Implicit
+-------------------------------------------------------------------------------
 
 If the directory containing the test case file also contains a file
 `exactly.suite`, then contents of this file is included in the test case.
@@ -69,3 +75,19 @@ If the directory containing the test case file also contains a file
 also contain contents shared by all test cases in the suite, such as:
 
 .. literalinclude:: examples/exactly-suite-w-tc-contents.xly
+
+
+Preprocessing the test case file
+===============================================================================
+
+
+- CLI ``--preprocessor``
+
+
+Getting help
+===============================================================================
+
+- CLI
+- Ref Man
+  - online
+  - generera via CLI

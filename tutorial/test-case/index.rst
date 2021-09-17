@@ -4,7 +4,7 @@ Test Cases
 
 
 .. toctree::
-   :titlesonly:
+   :maxdepth: 5
 
    rep-exe/index
    structure/index
@@ -12,3 +12,4 @@ Test Cases
    text
    files
    programs
+   other

@@ -1,5 +1,5 @@
 ===============================================================================
-Type system (type, symbol, def, ref)
+Type system (type, symbol, def, ref, reporting)
 ===============================================================================
 
 - def
@@ -9,3 +9,8 @@ Type system (type, symbol, def, ref)
 - constant
   - cannot be mutated
   - cannot be initialized (ftm) from dynamic data
+- Built in symbols
+- CLI
+  - ``symbol``
+  - ``help type``
+  - ``help syntax``
