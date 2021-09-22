@@ -1,16 +1,3 @@
 ===============================================================================
-Test Cases
+The Action To Check
 ===============================================================================
-
-
-.. toctree::
-   :maxdepth: 5
-
-   rep-exe/index
-   structure/index
-
-   atc
-   text
-   files
-   programs
-   other

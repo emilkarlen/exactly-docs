@@ -10,12 +10,12 @@ Test Case files
 A test case is represented by a text file.
 A single file represents a single test case.
 
-The following test case confirms that the `cat` program on the
+The following test case confirms that the :command:`cat` program on the
 system copies stdin to stdout:
 
 .. literalinclude:: examples/cat.case
 
-If the file `cat.case` contains this text, then Exactly can
+If the file :file:`cat.case` contains this text, then Exactly can
 execute it:
 
 .. code-block:: console
@@ -61,7 +61,7 @@ The path |my_setup_file| is relative the location of the test case file.
 .. note::
    ``including`` may not be used under ``[act]``.
 
-.. |my_setup_file| replace:: `my-setup.xly`
+.. |my_setup_file| replace:: :file:`my-setup.xly`
 
 
 
