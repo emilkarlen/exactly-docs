@@ -67,3 +67,7 @@ html_static_path = ['_static']
 
 
 highlight_language = 'text'
+
+rst_prolog = """
+.. _Reference Manual: https://emilkarlen.github.io/exactly/version/0-15-0/reference-manual.html
+"""

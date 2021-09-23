@@ -30,20 +30,6 @@ on stdout.
 If a test case passes, the exit code is 0. Otherwise it is non zero.
 
 
-Reporting the output of the checked action
-===============================================================================
-
-The ``--act`` option tells Exactly to report the output of the checked
-action - exit code, stdout and stderr:
-
-.. code-block:: console
-
-    $ exactly --act cat.case
-    the contents of stdin
-
-Assertions are ignored.
-
-
 File inclusion
 ===============================================================================
 
