@@ -100,7 +100,7 @@ The statement instructions can be grouped as follows:
   ``def``   Defines a symbol
   ========= ===================================================================
 
-The `setup` phase contains one extra instruction:
+The `setup` phase accepts one additional instruction:
 
 ========= =====================================================================
 ``stdin`` Sets the contents of stdin for the "action to check"
@@ -147,6 +147,7 @@ Mandatory arguments may usually appear on a new line, while optional arguments m
 
 TODO ADD exempel
 
+TODO ADD many args are types in the type sys. Ref to types intro??
 
 
 Help

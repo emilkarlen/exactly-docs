@@ -29,6 +29,8 @@ on stdout.
 
 If a test case passes, the exit code is 0. Otherwise it is non zero.
 
+TODO Mention phases
+
 
 File inclusion
 ===============================================================================
