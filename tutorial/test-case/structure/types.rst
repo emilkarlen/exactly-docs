@@ -21,6 +21,8 @@ Type system
      - ``help type``
      - ``help syntax``
 
+.. contents:: :local:
+
 Exactly has a type system specialized for test cases:
 
 * Data types
@@ -46,7 +48,39 @@ Exactly has a type system specialized for test cases:
    text-transformer  Transforms a text
    ================= ==========================================================
 
-How to use these types are exemplified later in this tutorial.
+How to use these types are exemplified in different parts of the tutorial.
+
+
+A note on syntax
+===============================================================================
+
+Exactly uses a rather peculiar syntax where the context determines
+how the space separated tokens are parsed.
+
+Thus, in one context, the following might be a single `list` value
+consisting of two elements:
+
+  ``fst snd``
+
+and in another context it might be two separate `string` values.
+
+One of the reasons for this context dependent syntax is to make
+some common use cases simpler.
+For example, a program in the OS PATH, with arguments,
+can be expressed like this:
+
+  ``% ls -l my-dir``
+
+instead of a hypothetical more complex - but more standard - syntax:
+
+  ``% "ls" ["-l", "my-dir"]``
+
+or even:
+
+  ``%("ls", ["-l", "my-dir"])``
+
+Refer to the `Reference Manual`_ for the exact syntax of types
+and in what contexts they can be used.
 
 
 Symbols

@@ -1,0 +1,3 @@
+[assert]
+
+stdout equals -contents-of -rel-home my-file.txt

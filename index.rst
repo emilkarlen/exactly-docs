@@ -20,7 +20,6 @@ Table of Contents
    :titlesonly:
 
    tutorial/index
-   examples/index
 
 
 Copying
