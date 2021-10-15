@@ -8,7 +8,7 @@ Documentation on using the Exactly test tool
 `Exactly <https://github.com/emilkarlen/exactly>`_  is a tool to test command line programs.
 
 - `Introduction with examples <https://emilkarlen.github.io/exactly/version/latest/README.html>`_
-- `Reference Manual <https://emilkarlen.github.io/exactly/version/latest/reference-manual.html>`_
+- `Reference Manual`_
 
 The documentation is under construction.
 

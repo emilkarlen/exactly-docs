@@ -39,15 +39,15 @@ File inclusion
 Explicit
 -------------------------------------------------------------------------------
 
-``including`` may be used to include parts of a test case from a file.
-Here, the file |my_setup_file| is included under ``[setup]``
+|inclusion_kwd| may be used to include parts of a test case from a file.
+Here, the file |my_setup_file| is included under |setup__ph_stx|:
 
 .. literalinclude:: examples/cat-including.case
 
 The path |my_setup_file| is relative the location of the test case file.
 
 .. note::
-   ``including`` may not be used under ``[act]``.
+   |inclusion_kwd| may not be used under |act__ph_stx|.
 
 .. |my_setup_file| replace:: :file:`my-setup.xly`
 
@@ -69,7 +69,7 @@ Preprocessing the test case file
 ===============================================================================
 
 
-- CLI ``--preprocessor``
+- CLI |preproc__opt|
 
 
 Getting help

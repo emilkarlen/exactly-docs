@@ -28,23 +28,26 @@ Exactly has a type system specialized for test cases:
 * Data types
 
    ======= ====================================================================
-   list    A sequence of zero or more string elements                                              
-   path    A file path, with special support for directories in the "test case directory structure"
-   string  A sequence of characters                                                                
+   list    A sequence of zero or more string elements
+   path    A file path, with special support for directories in the
+           "test case directory structure"
+   string  A sequence of characters
    ======= ====================================================================
 
 * Types involving logic
 
    ================= ==========================================================
-   file-matcher      Matches properties of an existing file - type, name and contents                       
-   files-condition   A condition of existence of a set of named files                                       
-   files-matcher     Matches a set of files (e.g. the contents of a directory)                              
-   files-source      Produces a set of files (for populating a directory)                                   
-   integer-matcher   Matches an integer                                                                     
-   line-matcher      Matches individual lines of a text                                                     
-   program           An external program, with optional arguments, and optional transformation of the output
-   text-matcher      Matches a text                                                                         
-   text-source       Produces a text, from various sources                                                  
+   file-matcher      Matches properties of an existing file -
+                     type, name and contents
+   files-condition   A condition of existence of a set of named files
+   files-matcher     Matches a set of files (e.g. the contents of a directory)
+   files-source      Produces a set of files (for populating a directory)
+   integer-matcher   Matches an integer
+   line-matcher      Matches individual lines of a text
+   program           An external program, with optional arguments,
+                     and optional transformation of the output
+   text-matcher      Matches a text
+   text-source       Produces a text, from various sources
    text-transformer  Transforms a text
    ================= ==========================================================
 
@@ -98,12 +101,12 @@ Here, the symbol ``my_string`` is defined to be
 a value of type ``string``.
 
 ::
-   
+
    def text-matcher my_matcher = equals 'OK' || equals 'SUCCESS'
 
 Here, the symbol ``my_matcher`` is defined to be
 a value of type ``text-matcher``.
-   
+
 A symbol is a constant - a symbol may not be redefined.
 
 Values are also constant - they may (unfortunately) not depend
@@ -111,10 +114,10 @@ on dymanic data (e.g. the output from a program).
 
 Symbols may be defined in the phases
 
-* `setup`
-* `before-assert`
-* `assert`
-* `cleanup`
+* |setup__ph|
+* |before_assert__ph|
+* |assert__ph|
+* |cleanup__ph|
 
 
 Reference

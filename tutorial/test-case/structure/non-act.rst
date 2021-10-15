@@ -12,13 +12,13 @@ Arranging and asserting
     - instruction descriptions
     - help
    comments
-   
+
 
 Phases
 ===============================================================================
 
-The `setup` phase sets up the environment that the Action To Check
-will be executed in (the `act` phase).
+The |setup__phase| sets up the environment that the |atc__cpt|
+will be executed in (the |act__phase|).
 
 ::
 
@@ -28,9 +28,9 @@ will be executed in (the `act` phase).
 
    env MY_ENV_VAR = 'my value'
 
-The `assert` phase expresses assertions on the outcome of the ATC.
-Preparations for this may be done in the `before-assert` phase,
-or within the `assert` phase itself.
+The |assert__phase| expresses assertions on the outcome of the |atc__cpt_acr|.
+Preparations for this may be done in the |before_assert__phase|,
+or within the |assert__phase| itself.
 
 ::
 
@@ -44,7 +44,7 @@ or within the `assert` phase itself.
 
   contents my-file.txt : every line : matches 'IMPORTANT'
 
-At the end, the `cleanup` phase can do cleanup not handled automatically.
+At the end, the |cleanup__phase| can do cleanup not handled automatically.
 
 ::
 
@@ -52,97 +52,105 @@ At the end, the `cleanup` phase can do cleanup not handled automatically.
 
   run my-database-cleanup-program
 
-  
-Instructions
+
+|instr__cpt_s|
 ===============================================================================
 
-All these phases consist of a sequence of `instructions`.
+All these phases consist of a sequence of |instr__cpt_def_s|.
 
-Instructions in all phases except `assert` are statements
+|instr__cpt_s| in all phases except |assert__ph| are statements
 used for their side effects.
-In the `assert` phase, these statements can be used too,
-but also instructions that serve as boolean expressions
-checking the result of executing the Action To Check.
+In the |assert__phase|, these statements can be used too,
+but primarily other |instr__cpt_s| that serve as boolean expressions
+checking the result of executing the |atc__cpt_acr|.
 
 
 Statements
 -------------------------------------------------------------------------------
 
-The statement instructions can be grouped as follows:
+The statement |instr__cpt_s| can be grouped as follows:
 
 * Running external programs
 
-  ============= ===============================================================
-  ``run``       Runs a "program"
-  ``%``         Runs a program installed on the current system (in the OS PATH)
-  ``$``         Executes a command using the current operating system's shell   
-  ============= ===============================================================
+  ==================== ========================================================
+  |run_pgm__instr|     Runs a |program__typ|
+  |run_os_path__instr| Runs a program installed on the current system
+                       (in the OS PATH)
+  |run_shell__instr|   Executes a command using
+                       the current operating system's shell
+  ==================== ========================================================
 
 * Setting up the execution environment for external programs
 
-  ============= ===============================================================
-  ``env``       Manipulates environment variables
-  ``cd``        Sets the "current directory"
-  ``timeout``   Sets the timeout of individual OS processes
-  ============= ===============================================================
+  ================= ===========================================================
+  |env__instr|      Manipulates environment variables
+  |cd__instr|       Sets the |cd__cpt|
+  |timeout__instr|  Sets the timeout of individual OS processes
+  ================= ===========================================================
 
 * Creating files and directories
 
-  ========= ===================================================================
-  ``file``  Creates or modifies a regular file
-  ``dir``   Creates or modifies a directory
-  ``copy``  Copies files and directories
-  ========= ===================================================================
+  ================ ============================================================
+  |file_r__instr|  Creates or modifies a regular file
+  |file_d__instr|  Creates or modifies a directory
+  |copy__instr|    Copies files and directories
+  ================ ============================================================
 
 * Defining symbols
 
-  ========= ===================================================================
-  ``def``   Defines a symbol
-  ========= ===================================================================
+  ============= ===============================================================
+  |def__instr|  Defines a symbol
+  ============= ===============================================================
 
-The `setup` phase accepts one additional instruction:
+The |setup__phase| accepts one additional |instr__cpt|:
 
-========= =====================================================================
-``stdin`` Sets the contents of stdin for the "action to check"
-========= =====================================================================
+============== ================================================================
+|stdin__instr| Sets the contents of stdin for the |atc__cpt|
+============== ================================================================
 
 
 Assertions
 -------------------------------------------------------------------------------
 
-Instructions for assertions in the `assert` phase
+|instr__cpt_s| for assertions in the |assert__phase|:
 
-================ ==============================================================
-``contents``     Tests the contents of a regular file                                        
-``dir-contents`` Tests the contents of a directory                                           
-``exists``       Tests the existence, and optionally properties, of a file                   
-``exit-code``    Tests the exit code from the "action to check", or from a "program"         
-``stderr``       Tests the contents of stderr from the "action to check", or from a "program"
-``stdout``       Tests the contents of stdout from the "action to check", or from a "program"
-================ ==============================================================
+==================== ==========================================================
+|contents_r__instr|  Tests the contents of a regular file
+|contents_d__instr|  Tests the contents of a directory
+|exists__instr|      Tests the existence, and optionally properties, of a file
+|exit_code__instr|   Tests the exit code from the |atc__cpt|,
+                     or from a |program__typ|
+|stderr__instr|      Tests the contents of stderr from the |atc__cpt|,
+                     or from a |program__typ|
+|stdout__instr|      Tests the contents of stdout from the |atc__cpt|,
+                     or from a |program__typ|
+==================== ==========================================================
 
-In the `assert` phase,
-the instructions for running programs may be used as assertions too.
+In the |assert__phase|,
+the |instr__cpt_s| for running programs may be used as assertions too.
+An exit code of 0 means the assertion passes, otherwise it fails.
 
 
-Instruction syntax
+|instr__cpt| syntax
 -------------------------------------------------------------------------------
 
 The syntax is line oriented - new lines have syntactic meaning.
 
-An instruction starts on a new line, beginning with the name of the instruction,
+An |instr__cpt| starts on a new line,
+beginning with the name of the |instr__cpt|,
 followed by its arguments.
 
-Each instruction has its own syntax for arguments.
+Each |instr__cpt| has its own syntax for arguments.
 Most common syntax is that of options and arguments
 resembling the Unix shell - options are preceded by a single dash (``-``).
 One difference though, is that the order of options is usually significant.
 
-Some instructions may span multiple lines,
+Some |instr__cpt_s| may span multiple lines,
 while some must use only a single line.
 The syntax is not always consistent, unfortunately.
 
-Mandatory arguments may usually appear on a new line, while optional arguments may not
+Mandatory arguments may usually appear on a new line,
+while optional arguments may not
 (unless followed by mandatory arguments).
 
 TODO ADD exempel
@@ -153,33 +161,33 @@ TODO ADD many args are types in the type sys. Ref to types intro??
 Help
 ...............................................................................
 
-Phases and instructions are documented in the `Reference Manual`_.
+Phases and |instr__cpt_s| are documented in the `Reference Manual`_.
 
 Builtin help is also available:
 
-* List of instructions per phase
+* List of |instr__cpt_s| per phase
 
   .. code-block:: console
 
       $ exactly help instructions
 
-* Description of a phase, listing all its instructions, e.g.:
+* Description of a phase, listing all its |instr__cpt_s|, e.g.:
 
   .. code-block:: console
 
       $ exactly help setup
 
-* Description of an instruction in a phase, e.g.:
+* Description of an |instr__cpt| in a phase, e.g.:
 
   .. code-block:: console
 
       $ exactly help setup stdin
 
 
-Instruction descriptions
+|instr__cpt| descriptions
 -------------------------------------------------------------------------------
 
-An Instruction may optionally be preceeded by a description::
+An |instr__cpt| may optionally be preceeded by a description::
 
   [assert]
 
@@ -194,7 +202,7 @@ The description is surrounded by back tics (\`).
 It may span several lines.
 
 Description are displayed in error messages,
-when an Instruction causes some kind of failure.
+when an |instr__cpt| causes some kind of failure.
 They are most usefull in the `assert` phase,
 for explaining failing assertions.
 
@@ -208,4 +216,6 @@ Exactly supports line comments preceded by ``#``::
 
   # This is a comment
 
-Unfortunately, comments may not be mixed with Instruction arguments.
+Unfortunately, comments may not be mixed with |instr__cpt| arguments.
+
+TODO ADD example
