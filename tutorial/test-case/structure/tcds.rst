@@ -20,7 +20,7 @@ so the file :file:`expected-output.txt` is a permanent file
 used by every execution of the test case.
 
 Temporary files, used only by a single execution of a test case,
-may also be needed.  Such as in this part of a test of a
+may also be needed. Such as in this part of a test of a
 :program:`git` commit hook::
 
   [setup]
@@ -55,6 +55,9 @@ one for permanent and one for temporary files:
   A set of temporary directories used by a single execution of a test case.
   One of them is the initial |cd__cpt|.
 
+More on these below. But first, let's introduce the closely
+related |path__type|.
+
 
 The |path__type|
 -------------------------------------------------------------------------------
@@ -65,39 +68,91 @@ The |path__type|
    default relativity
    where path values can be used
 
-The |path__type| is desiged to faciliate referring to these directories.
-It uses the concept of |relativity__cpt_def| to tell which directory
+
+The |path__type| is desiged to faciliate referring to files in the
+|tcds__cpt_acr| directories.
+
+
+Relative paths
+...............................................................................
+
+In a Unix shell e.g., a relative path is relative to
+the shell's current directory.
+Exactly also manages a current directory, and paths may be relative
+to this directory. (See :ref:`cd__cpt-label`).
+
+But paths may also be relative to one of
+the directories in the |tcds__cpt_acr|.
+The reason for this is to minimize the need to supply absolute paths.
+
+The concept of |relativity__cpt_def| tells which directory
 a path is relative to.
+
 For example::
-
-  [assert]
-  
-  stdout equals -contents-of -rel-home expected-output.txt
-
-Here,
-``-rel-home expected-output.txt`` is a value of the |path__type|.
-The option ``-rel-home`` specifies which directory the
-path :file:`expected-output.txt` is relative to.
-It specifies one of the directories in the |tcds__cpt_acr|.
-(Other options specify other |relativity__cpt_s|, more about this later).
-
-Paths use a |dflt_relativity__cpt_def|, to minimize the need to specify the
-relativity explicitly.
-The example below is equivalent to the one above::
 
   [assert]
   
   stdout equals -contents-of expected-output.txt
 
+Here, :file:`expected-output.txt` is a relative path
+that is relative to one of the directories in the |hds__cpt_acr|,
+namely the |hds_home__ent| directory.
 
-Here, ``expected-output.txt`` is a |string__type| value.
-A |string__typ| value is a valid |path__typ|, that uses the |dflt_relativity__cpt| of
-the context in which the |path__typ| argument appears.
-In this case, the default relativity is ``-rel-home``.
+I.e., the |hds_home__ent| directory of the |hds__cpt_acr| is the
+|dflt_relativity__cpt_def| in this context.
+
+The context is
+
+  |text_src__contents__kwd|\ ``expected-output.txt``
+
+which is a value of the |text_src__type|.
+
+The reason for this |dflt_relativity__cpt| is that
+:file:`expected-output.txt` is likely to be a permanent file
+used by every execution of the test case.
+(Remember, the |hds__cpt| is used for storing permanent files!)
+
+If the |dflt_relativity__cpt| is not what you want,
+use an absolute path!
 
 .. note::
-   |path__typ| values in different context have different default relativities.
-   See the `Reference Manual`_ for details.
+   The `Reference Manual`_ documents the |dflt_relativity__cpt|
+   of every context a |path__typ| appears in.
+   In this case, see the syntax of the |text_src__type|.
+
+
+Absolute paths
+...............................................................................
+
+A path starting with ``/`` is absolute:
+
+  ``/path/to/my-file.txt``
+
+.. note::
+   ``/`` separates pathname components regardless of platform.
+
+
+A path prefixed by an absolute |path__typ| symbol is absolute::
+
+  def path ROOT     = /the/root/path
+
+  def path ABSOLUTE = @[ROOT]@/subdir/my-file.txt
+
+Any of the directories in the |tcds__cpt_acr| may be used
+as root. Either using its |relativity__cpt| option:
+
+  |hds_home__opt|\ ``my-file.txt``
+
+or its builtin symbol:
+
+.. HARD-CODED
+..
+
+  ``@[EXACTLY_HOME]@/my-file.txt``
+
+.. note::
+   The |relativity__cpt| options and builtin symbols corresponding
+   to each of the |tcds__cpt_acr| directories are listed below.
 
 
 |hds__cpt_def| (|hds__cpt_acr|)
@@ -117,15 +172,25 @@ that should probably not be modified:
 
 ===================  ==========================================================
 |hds_home__ent|      Default location of persistent helper files.
-|hds_act_home__ent|  Default location of files referenced from |act__phase|.
+|hds_act_home__ent|  Default location of files referenced from the
+                     |act__phase|.
 ===================  ==========================================================
 
 Exactly prevents modification of the contents of these directories,
 by preventing them from being used by modification operations.
 
-.. note::
+.. warning::
    Exactly cannot prevent an external program from modifying their contents.
 
+The corresponding relativity option, and built in symbol for the |hds__cpt_acr|
+directories:
+
+===================  ===================  =====================================
+|hds__cpt_acr| dir   Relativity option    Builtin path symbol
+===================  ===================  =====================================
+|hds_home__ent|      |hds_home__opt|      |hds_home__bi|
+|hds_act_home__ent|  |hds_act_home__opt|  |hds_act_home__bi|
+===================  ===================  =====================================
 
 Both of these directories default to
 the directory containing the test case file.
@@ -164,16 +229,6 @@ and
 
 And as said, these paths will in turn be relative to the location of
 the file with the above definition of the |conf__phase|.
-
-The corresponding relativity option, and built in symbol for the |hds__cpt_acr|
-directories:
-
-===================  ===================  =====================================
-|hds__cpt_acr| dir   Relativity option    Builtin path symbol
-===================  ===================  =====================================
-|hds_home__ent|      |hds_home__opt|      |hds_home__bi|
-|hds_act_home__ent|  |hds_act_home__opt|  |hds_act_home__bi|
-===================  ===================  =====================================
 
 The following path specifications are both equivalent to the ones above::
 
@@ -263,9 +318,9 @@ using |cd__instr|.
 When the |act__phase| is executed, the |sds_result__ent| directory
 is populated with files to capture the output from the |atc__cpt|:
 
-* :file:`exit-code`
-* :file:`stdout`
-* :file:`stderr`
+* |exit_code__file|
+* |stdout__file|
+* |stderr__file|
 
 The corresponding instructions in the |assert__phase| use these files::
 
@@ -346,7 +401,7 @@ using the |rel_sym__opt| option::
 
 Here, ``my_relativity_root_symbol`` must have been defined as a |path__typ|.
 
-.. HARD CODED
+.. HARD-CODED
 
 Given::
 
@@ -367,10 +422,23 @@ An equivalent definition of ``my_path`` is::
 The built in paths can of course also be used with |rel_sym__opt|.
 The following paths are equivalent:
 
-.. HARD CODED
+.. HARD-CODED
 
 * ``-rel-act         my-file``
 * ``-rel EXACTLY_ACT my-file``
 * ``@[EXACTLY_ACT]@/my-file``
 
 Which form to use is a matter of taste.
+
+
+|cd__cpt|
+-------------------------------------------------------------------------------
+
+.. HARD-CODED
+
+The |rel_cd__opt| denotes the |cd__cpt| that Exactly manages:
+
+  ``-rel-cd my-file``
+
+
+See :ref:`cd__cpt-label` for a detailed explanation.

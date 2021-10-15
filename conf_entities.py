@@ -61,6 +61,7 @@ rst_prolog = """
 .. |hds_home__ent|      replace:: :emphasis:`home`
 .. |hds_home__opt|      replace:: :literal:`-rel-home`
 .. |hds_home__bi|       replace:: :literal:`EXACTLY_HOME`
+.. |hds_home__bi_ref|   replace:: :literal:`@[EXACTLY_HOME]@`
 .. |hds_act_home__ent|  replace:: :emphasis:`act-home`
 .. |hds_act_home__opt|  replace:: :literal:`-rel-act-home`
 .. |hds_act_home__bi|   replace:: :literal:`EXACTLY_ACT_HOME`
@@ -120,6 +121,7 @@ rst_prolog = """
 .. |text_trans__typ|  replace:: :emphasis:`text-transformer`
 .. |text_trans__type| replace:: |text_trans__typ| type
 
+.. |text_src__contents__kwd| replace:: :literal:`-contents-of`
 
 .. |run_pgm__instr|       replace:: |pgm__pgm_kwd|
 .. |run_os_path__instr|   replace:: |os_path__pgm_kwd|
@@ -143,6 +145,10 @@ rst_prolog = """
 
 .. |inclusion_kwd|      replace:: :literal:`including`
 
+
+.. |exit_code__file|  replace:: :file:`exit-code`
+.. |stdout__file|     replace:: :file:`stdout`
+.. |stderr__file|     replace:: :file:`stderr`
 
 .. |preproc__opt| replace:: :literal:`--preprocessor`
 .. |act__opt|     replace:: :literal:`--act`
