@@ -121,6 +121,8 @@ rst_prolog = """
 .. |text_trans__typ|  replace:: :emphasis:`text-transformer`
 .. |text_trans__type| replace:: |text_trans__typ| type
 
+.. |rich_string__stx| replace:: :literal:`RICH-STRING`
+
 .. |text_src__contents__kwd| replace:: :literal:`-contents-of`
 
 .. |run_pgm__instr|       replace:: |pgm__pgm_kwd|
